@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Game</title>
+	<link href="https://fonts.googleapis.com/css?family=Volkhov&display=swap" rel="stylesheet">
+	<style>
+		canvas {
+			position: fixed;
+			top: 0;
+		}
+		body {
+			font-family: 'Volkhov';
+			display: flex;
+      flex-direction: column;
+			justify-content: center;
+			height: 100vh;
+			align-items: center;
+			margin: 0;
+      padding: 0;
+			overflow: hidden;
+			background-image: url("assets/menuBackground.jpg");
+		}
+
+    #start-game {
+			font-family: 'Volkhov';
+			background: none;
+			border: none;
+			background-image: url("assets/menuButtonBackground.png");		
+			width: 200px;
+			height: 60px;	
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;   
+			margin-top: 50px;	
+			font-size: 20px;
+			color: #ddd;
+      cursor: pointer;
+		}
+
+    #start-game span {
+			display: block;
+			margin-left: 35px;
+			margin-top: 13px;
+		}
+
+    #start-game:hover {
+      opacity: 0.8;
+    }
+
+    #video {
+      -webkit-box-shadow: 8px 8px 20px 0px rgba(0,0,0,1);
+      -moz-box-shadow: 8px 8px 20px 0px rgba(0,0,0,1);
+      box-shadow: 8px 8px 20px 0px rgba(0,0,0,1);
+    }
+    #res-counter {
+      display: none;
+			z-index: 9999;
+			position: fixed;
+			top: 0px;
+			padding: 5px;
+			padding-left: 55px;
+			left: 70px;
+			font-size: 16px;
+			color: #ffb000;
+			background-image: url("assets/resBackground.png");		
+			width: 100px;
+			height: 17px;	
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;   
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+		}
+
+    .loader {
+      width: 137px;
+      height: 107px;
+      position: fixed;
+      top: calc(50vh - 50px);
+      left: calc(50vw - 65px);
+      background-image: url("assets/soldier.gif");	
+      z-index: 999;
+      display: none;
+    }
+
+    .loader::before {
+      content: 'Loading...';
+      margin-top: 110px;
+      display: block;
+      text-align: center;
+      font-family: 'Volkhov';
+      color: #444;
+    }
+
+    .loader-background {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: #fff;
+      display: none;
+    }
+
+    #title {
+      margin-bottom: 20px;
+      color: #999;
+    }
+	</style>
+</head>
+<body>
+    <div id="res-counter"></div>
+    <div class="loader"></div>
+    <div class="loader-background"></div>
+    <h1 id="title">Before start the game please see this short tutorial</h1>
+    <iframe id="video" width="1000" height="485" src="https://www.youtube.com/embed/6vil2MBH_Vo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div id="start-game"><span>START GAME</span></div>
+	<script src="dist/bundle.js"></script>
+	<script>
+		document.oncontextmenu = document.body.oncontextmenu = function() {return false;}
+	</script>
+<script type="text/javascript" src="/index.bundle.js"></script><script type="text/javascript" src="/vendor.bundle.js"></script></body>
+</html>
